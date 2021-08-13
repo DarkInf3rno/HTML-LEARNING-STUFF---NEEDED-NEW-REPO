@@ -1,0 +1,15 @@
+header {
+    position: relative;
+}
+
+.banner {
+    position: relative;
+} 
+
+.banner img {
+    max-width: 100%; /*Makes the width 100% of viewport */
+}
+
+.banner .welcome {
+    position: absolute; 
+}
