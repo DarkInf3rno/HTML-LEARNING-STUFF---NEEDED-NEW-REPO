@@ -1,0 +1,243 @@
+/*Pseudo classes - Style elements to target something when its in a particular state.
+:hover :focus :first-child
+
+Change something when you hover something or whatnot*/
+
+
+body, ul, li, h1, h2, h3, a {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 10px;
+    width: 100%;
+    background-color: #F63232;
+    z-index: 1; 
+    padding: 6px 12px;
+    text-align: center;
+
+}
+
+header h1{
+    color: white;
+    border: 8px solid white;
+    padding: 6px 12px; /*First value for padding is top and bottom, second one is left and right */
+    display: inline-block;
+    border-radius: 36px;
+}
+
+.banner {
+    position: relative;
+} 
+
+.banner img {
+    width: 100%; /*Makes the width 100% of viewport */
+}
+
+.banner .welcome {
+    font-size: 75px;
+    background-color: #FEB614;
+    color: white;
+    position: absolute; 
+    top: 50%; 
+    left: 10%;
+}
+
+.banner h2 span {
+    font-size: 1.3em;  /*em takes the value of the inherited size and adds the multiplier; */
+}
+
+nav {
+    background-color: #F4F4F4;
+    padding: 20px;
+    position: sticky;
+    top: 60px;   
+   
+}
+nav ul{
+    white-space: nowrap; /*Makes sure that the whitespace is autoset meaning that the contact link wont go to new line. */
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+nav li {
+    display: inline-block;
+    width: 25%; 
+    font-size: 24px;
+    
+}
+
+nav li a {
+    text-decoration: none;
+    color: #4B4B4B; 
+}
+
+nav li a .join {
+    color: #F63232;
+}
+
+main {
+    max-width: 100%; /*Say browser is 2000px wide, then the main block will have a width of 1200px, but however if it was 800px, then the main tag would have a width of 100%. */
+    width: 1200px; 
+    margin: 80px auto; 
+    padding: 0 40px;
+    box-sizing: border-box; /*box sizing changes the way CSS calculates the size of an object. border-box tells the browser to account for nay border and padding in the values for the width and height. */
+}
+
+article h2 {
+    color: #F63232;
+    font-size: 48px;
+}
+
+article p {
+    line-height: 2em;
+
+}
+ 
+.images {
+    text-align: center;
+    margin: 80px 0;
+    white-space: nowrap;
+}
+
+.images li {
+    display: inline-block;
+    width: 40%;
+    margin: 20px 5%; 
+}
+
+.images li img {
+    max-width: 100%; /*We have set the parent to be 40% width of the block. Therefore the max width of the image tags become 40% of the browser width by inheritance */
+}
+
+section.join {
+    background-color: #F4F4F4;
+    text-align: center;
+    padding: 60px 20px;
+    color: #4B4B4B; 
+}
+
+.join h2 {
+    font-size: 36px;
+}
+
+form input {
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 28px;
+    border: 4px solid white; 
+}
+
+footer {
+    background: #F63232;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Pseudo classes */
+
+nav li a:hover {
+    color: #F63232;
+    background-color: cyan;
+}
+
+.images li:hover {
+    position: relative;
+    top: -30px; 
+}
+
+form input:focus {
+    border: 4px dashed #4b4b4b; 
+}
+
+form input:valid {
+    border: 4px solid #71d300;
+}
+
+nav li:first-child {
+    border: 4px solid cyan;
+}
+article p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+section .join p::first-letter {
+    font-weight: bold; 
+    font-size: 3em;
+}
+
+p::selection {
+    background-color: #F63232;
+}
+
+p::after {
+    content: 'This is a random piece of text';
+}
+
+/*Responsive Styles - Can make media queries to change styles for certain viewports. */ 
+
+/*Media Query format - @media screen and (condition) - Screen can prolly be replaced with some other stuff depending on the condition. But screen is used in the tutorial to make a responsive website that works with all sized devices */
+@media screen and (max-width: 990px) {
+
+    /*Add styles here */
+    .banner .welcome h2 {
+        font-size: 55px;
+    }
+
+
+    nav li {
+        font-size: 12px; 
+        font-weight: bold;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    .banner .welcome br {
+        display: none;
+    }
+    .banner .welcome {
+        text-align: center;
+        position: relative; 
+        left: 0px; 
+
+    }
+     
+    .banner .welcome h2 {
+        font-size: 35px;
+    }
+
+    .banner .welcome span {
+        font-size: 1em;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+
+    .images li {
+
+        width: 100%;
+        margin: 20px auto; 
+        display: block; 
+
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .banner .welcome h2 {
+        font-size: 18px;
+
+    }
+
+}
+ 
+ 
